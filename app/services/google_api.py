@@ -4,14 +4,14 @@ from aiogoogle import Aiogoogle
 
 from app.core.config import settings
 from app.models import CharityProject
-
-FORMAT = '%Y/%m/%d %H:%M:%S'
-ROWCOUNT = 1000
-COLUMNCOUNT = 10
-SHEETS_VERSION = {'sheets': 'v4'}
-DRIVE_VERSION = {'drive': 'v3'}
-LOCALE = 'ru_RU'
-SHEET_RANGE = 'A1:E30'
+from .constants import FORMAT, ROWCOUNT, COLUMNCOUNT, SHEETS_VERSION, DRIVE_VERSION, LOCALE, SHEET_RANGE
+# FORMAT = '%Y/%m/%d %H:%M:%S'
+# ROWCOUNT = 1000
+# COLUMNCOUNT = 10
+# SHEETS_VERSION = {'sheets': 'v4'}
+# DRIVE_VERSION = {'drive': 'v3'}
+# LOCALE = 'ru_RU'
+# SHEET_RANGE = 'A1:E30'
 
 
 async def spreadsheets_create(wrapper_services: Aiogoogle) -> str:
@@ -19,7 +19,7 @@ async def spreadsheets_create(wrapper_services: Aiogoogle) -> str:
     service = await wrapper_services.discover(SHEETS_VERSION)
     spreadsheet_body = {
         'properties': {'title': f'Отчет на {now_date_time}',
-                       'locale': 'ru_RU'},
+                       'locale': (LOCALE)},
         'sheets': [{'properties': {'sheetType': 'GRID',
                                    'sheetId': 0,
                                    'title': 'Лист1',

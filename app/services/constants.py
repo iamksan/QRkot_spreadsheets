@@ -1,0 +1,7 @@
+FORMAT = '%Y/%m/%d %H:%M:%S'
+ROWCOUNT = 1000
+COLUMNCOUNT = 10
+SHEETS_VERSION = {'sheets': 'v4'}
+DRIVE_VERSION = {'drive': 'v3'}
+LOCALE = 'ru_RU'
+SHEET_RANGE = 'A1:E30'

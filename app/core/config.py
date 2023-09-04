@@ -9,7 +9,6 @@ class Settings(BaseSettings):
     secret: str = 'SECRET'
     first_superuser_email: Optional[EmailStr] = None
     first_superuser_password: Optional[str] = None
-    """ Переменные для Google API"""
     type: Optional[str] = None
     project_id: Optional[str] = None
     private_key_id: Optional[str] = None
